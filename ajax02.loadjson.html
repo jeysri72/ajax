@@ -1,0 +1,29 @@
+
+<html>
+<head>
+</head>
+<body>
+
+<button type="button" class="btn">Click me!</button>
+<p class="text">Replace me!!</p>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+	$('.btn').click(function() {
+  
+		$('.text').text('loading . . .');
+	  
+		$.ajax({
+			type:"GET",
+			url:"products.json",
+			dataType: 'json',
+			success: function(data) {
+				$('.text').text(JSON.stringify(data));
+			},
+			
+		});
+  
+  
+	});
+</script>
+</body>
+</html>
